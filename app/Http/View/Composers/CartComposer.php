@@ -31,7 +31,10 @@ class CartComposer
             ->whereIn('id', $productId)
             ->get();
 
-        $view->with('products', $products);
+        $view->with([
+            'products' => $products,
+            'carts' => $carts,
+        ]);
 
     }
 }

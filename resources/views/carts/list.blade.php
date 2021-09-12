@@ -48,7 +48,8 @@
                                                     </div>
                                                 </td>
                                                 <td class="column-2">{{ $product->name }}</td>
-                                                <td class="column-3">{{ \App\Helpers\Helper::product_price($price) }}
+                                                <td class="column-3">
+                                                    {{ \App\Helpers\Helper::product_price($price) }}
                                                 </td>
                                                 <td class="column-4">
                                                     <div class="wrap-num-product flex-w m-l-auto m-r-0">
@@ -115,8 +116,39 @@
                                 </div>
                             </div>
 
+                            <div class="flex-w flex-t bor12 p-t-15 p-b-30">
+                                <div class="size-100 p-r-18 p-r-0-sm w-full-ssm">
+                                    <div class="p-t-15">
+
+
+
+
+                                        <div class="bor8 bg0 m-b-12">
+                                            <input class="stext-111 cl8 plh3 size-111 p-lr-15" type="text" name="name"
+                                                placeholder="Nhập tên của bạn" required>
+                                        </div>
+
+                                        <div class="bor8 bg0 m-b-22">
+                                            <input class="stext-111 cl8 plh3 size-111 p-lr-15" type="text" name="phone"
+                                                placeholder="Nhập số điện thoại của bạn " required>
+                                        </div>
+                                        <div class="bor8 bg0 m-b-22">
+                                            <input class="stext-111 cl8 plh3 size-111 p-lr-15" type="text" name="email"
+                                                placeholder="Nhập email của bạn ">
+                                        </div>
+                                        <div class="bor8 bg0 m-b-22">
+                                            <input class="stext-111 cl8 plh3 size-111 p-lr-15" type="text" name="address"
+                                                placeholder="Nhập địa chỉ của bạn ">
+                                        </div>
+                                        <div class="bor8 bg0 m-b-22">
+                                          <textarea name="content" id="" cols="30" rows="10" placeholder=" Nhập Ghi chú..."></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
                             <button class="flex-c-m stext-101 cl0 size-116 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer">
-                                Proceed to Checkout
+                                Đặt hàng
                             </button>
                         </div>
                     </div>
