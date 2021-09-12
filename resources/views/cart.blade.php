@@ -17,12 +17,11 @@
             $sumPriceCart = 0;
             @endphp
             <ul class="header-cart-wrapitem w-full">
-                @if(count($carts) > 0)
-
+                @if(count($products) > 0 )
                     @foreach($products as $product)
                         @php
                             $price = $product->price_sale != 0 ? $product->price_sale : $product->price;
-                            $sumPriceCart+=$price;
+                            $sumPriceCart+=$price *  $carts[$product->id];
                         @endphp
                         <li class="header-cart-item flex-w flex-t m-b-12">
                             <div class="header-cart-item-img">
@@ -41,7 +40,6 @@
                         </li>
                     @endforeach
                 @endif
-
             </ul>
 
             <div class="w-full">

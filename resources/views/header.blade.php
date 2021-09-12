@@ -6,7 +6,6 @@
 <header>
     <!-- Header desktop -->
     <div class="container-menu-desktop">
-
         <div class="wrap-menu-desktop">
             <nav class="limiter-menu-desktop container">
 
@@ -35,7 +34,7 @@
                     </div>
 
                     <div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart"
-                         data-notify="{{count(\Illuminate\Support\Facades\Session::get('carts'))}}">
+                         data-notify="{{ count(array(\Session::get('carts'))) }}">
                         <i class="zmdi zmdi-shopping-cart"></i>
                     </div>
                 </div>

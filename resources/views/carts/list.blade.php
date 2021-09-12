@@ -8,11 +8,11 @@
             </a>
 
             <span class="stext-109 cl4">
-				Shoping Cart
-			</span>
+                Shoping Cart
+            </span>
         </div>
     </div>
-    @if(count($products) != 0)
+    @if (count($products) != 0)
         <form class="bg0 p-t-75 p-b-85" method="POST">
             <div class="container">
                 <div class="row">
@@ -25,51 +25,53 @@
                                 @endphp
                                 <table class="table-shopping-cart">
                                     <tbody>
-                                    <tr class="table_head">
-                                        <th class="column-1">Product</th>
-                                        <th class="column-2"></th>
-                                        <th class="column-3">Price</th>
-                                        <th class="column-4">Quantity</th>
-                                        <th class="column-5">Total</th>
-                                        <th class="column-6">&nbsp;</th>
-                                    </tr>
-
-                                    @foreach($products as $product)
-                                        @php
-                                            $price = $product->price_sale != 0 ? $product->price_sale : $product->price;
-                                            $priceEnd = $price * $carts[$product->id];
-                                            $total += $priceEnd;
-                                        @endphp
-
-                                        <tr class="table_row">
-                                            <td class="column-1">
-                                                <div class="how-itemcart1">
-                                                    <img src="{{$product->thumb}}" alt="IMG">
-                                                </div>
-                                            </td>
-                                            <td class="column-2">{{$product->name}}</td>
-                                            <td class="column-3">{{\App\Helpers\Helper::product_price($price)}}</td>
-                                            <td class="column-4">
-                                                <div class="wrap-num-product flex-w m-l-auto m-r-0">
-                                                    <div class="btn-num-product-down cl8 hov-btn3 trans-04 flex-c-m">
-                                                        <i class="fs-16 zmdi zmdi-minus"></i>
-                                                    </div>
-
-                                                    <input class="mtext-104 cl3 txt-center num-product" type="number"
-                                                           name="num_product[{{$product->id}}]"
-                                                           value="{{$carts[$product->id]}}">
-
-                                                    <div class="btn-num-product-up cl8 hov-btn3 trans-04 flex-c-m">
-                                                        <i class="fs-16 zmdi zmdi-plus"></i>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td class="column-5">{{\App\Helpers\Helper::product_price($priceEnd)}}</td>
-                                            <td class="p-r-15">
-                                                <a href="/carts/delete/{{$product->id}}">Xoá</a>
-                                            </td>
+                                        <tr class="table_head">
+                                            <th class="column-1">Product</th>
+                                            <th class="column-2"></th>
+                                            <th class="column-3">Price</th>
+                                            <th class="column-4">Quantity</th>
+                                            <th class="column-5">Total</th>
+                                            <th class="column-6">&nbsp;</th>
                                         </tr>
-                                    @endforeach
+
+                                        @foreach ($products as $product)
+                                            @php
+                                                $price = $product->price_sale != 0 ? $product->price_sale : $product->price;
+                                                $priceEnd = $price * $carts[$product->id];
+                                                $total += $priceEnd;
+                                            @endphp
+
+                                            <tr class="table_row">
+                                                <td class="column-1">
+                                                    <div class="how-itemcart1">
+                                                        <img src="{{ $product->thumb }}" alt="IMG">
+                                                    </div>
+                                                </td>
+                                                <td class="column-2">{{ $product->name }}</td>
+                                                <td class="column-3">{{ \App\Helpers\Helper::product_price($price) }}
+                                                </td>
+                                                <td class="column-4">
+                                                    <div class="wrap-num-product flex-w m-l-auto m-r-0">
+                                                        <div class="btn-num-product-down cl8 hov-btn3 trans-04 flex-c-m">
+                                                            <i class="fs-16 zmdi zmdi-minus"></i>
+                                                        </div>
+
+                                                        <input class="mtext-104 cl3 txt-center num-product" type="number"
+                                                            name="num_product[{{ $product->id }}]"
+                                                            value="{{ $carts[$product->id] }}">
+
+                                                        <div class="btn-num-product-up cl8 hov-btn3 trans-04 flex-c-m">
+                                                            <i class="fs-16 zmdi zmdi-plus"></i>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td class="column-5">
+                                                    {{ \App\Helpers\Helper::product_price($priceEnd) }}</td>
+                                                <td class="p-r-15">
+                                                    <a href="/carts/delete/{{ $product->id }}">Xoá</a>
+                                                </td>
+                                            </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
 
@@ -78,7 +80,7 @@
                             <div class="flex-w flex-sb-m bor15 p-t-18 p-b-15 p-lr-40 p-lr-15-sm">
                                 <div class="flex-w flex-m m-r-20 m-tb-5">
                                     <input class="stext-104 cl2 plh4 size-117 bor13 p-lr-20 m-r-10 m-tb-5" type="text"
-                                           name="coupon" placeholder="Coupon Code">
+                                        name="coupon" placeholder="Coupon Code">
 
                                     <div
                                         class="flex-c-m stext-101 cl2 size-118 bg8 bor13 hov-btn3 p-lr-15 trans-04 pointer m-tb-5">
@@ -87,7 +89,7 @@
                                 </div>
 
                                 <input type="submit" value="Update Cart" formaction="/update-cart"
-                                       class="flex-c-m stext-101 cl2 size-119 bg8 bor13 hov-btn3 p-lr-15 trans-04 pointer m-tb-10">
+                                    class="flex-c-m stext-101 cl2 size-119 bg8 bor13 hov-btn3 p-lr-15 trans-04 pointer m-tb-10">
                                 @csrf
                             </div>
                         </div>
@@ -101,15 +103,15 @@
 
                             <div class="flex-w flex-t p-t-27 p-b-33">
                                 <div class="size-208">
-								<span class="mtext-101 cl2">
-									Total:
-								</span>
+                                    <span class="mtext-101 cl2">
+                                        Total:
+                                    </span>
                                 </div>
 
                                 <div class="size-209 p-t-1">
-								<span class="mtext-110 cl2">
-									{{\App\Helpers\Helper::product_price($total)}}
-								</span>
+                                    <span class="mtext-110 cl2">
+                                        {{ \App\Helpers\Helper::product_price($total) }}
+                                    </span>
                                 </div>
                             </div>
 
