@@ -12,6 +12,7 @@
             </span>
         </div>
     </div>
+    @include('admin.alert')
     @if (count($products) != 0)
         <form class="bg0 p-t-75 p-b-85" method="POST">
             <div class="container">
@@ -141,7 +142,8 @@
                                                 placeholder="Nhập địa chỉ của bạn ">
                                         </div>
                                         <div class="bor8 bg0 m-b-22">
-                                          <textarea name="content" id="" cols="30" rows="10" placeholder=" Nhập Ghi chú..."></textarea>
+                                            <textarea name="content" id="" cols="30" rows="10"
+                                                placeholder=" Nhập Ghi chú..."></textarea>
                                         </div>
                                     </div>
                                 </div>

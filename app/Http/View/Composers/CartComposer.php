@@ -20,6 +20,8 @@ class CartComposer
 
     public function compose(View $view)
     {
+
+
         $carts = Session::get('carts');
         if (is_null($carts)) {
             return [];
